@@ -1,0 +1,97 @@
+name: deliveryapp
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  get: ^4.6.1
+  jiffy: ^6.3.2
+  intl: ^0.19.0
+  http: ^1.2.2
+  cached_network_image: ^3.2.0
+  # image_picker: ^1.1.2
+  show_up_animation: ^2.0.0
+  auto_animated: ^3.0.1
+  flutter_polyline_points: ^2.1.0
+  google_maps_flutter: ^2.1.5
+  geolocator: ^13.0.2
+  geocoding: ^3.0.0
+  firebase_messaging: ^15.1.6
+  firebase_core: ^3.9.0
+  flutter_local_notifications: ^19.0.0
+  cloud_firestore: ^5.6.0
+  sqflite: ^2.0.2
+  shared_preferences: ^2.0.15
+  path: ^1.8.0
+  qr_flutter: ^4.0.0
+  # scan: ^1.6.0
+  grouped_list: ^6.0.0
+  url_launcher: ^6.1.2
+  badges: ^3.1.2
+  flutter_svg: ^2.0.17
+  font_awesome_flutter: ^10.1.0
+  fluttericon: ^2.0.0
+  dartz: ^0.10.1
+  google_sign_in: ^6.2.2
+  device_preview: ^1.2.0
+  responsive_builder: ^0.7.1
+  # image_pickers: ^2.0.0+2
+  flutter_otp_text_field: ^1.1.0+2
+  lottie: ^3.2.0
+  firebase_analytics: ^11.4.2
+  flutter_map: ^8.1.0
+  latlong2: ^0.9.1
+  dropdown_search: ^6.0.2
+  flutter_ringtone_player: ^4.0.0+4
+  flutter_rating_bar: ^4.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^5.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/image_lottie/
+    - assets/svg_icons/
+
+  fonts:
+    - family: cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+    - family: lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+        - asset: assets/fonts/Lato-Black.ttf
+          weight: 700
