@@ -15,34 +15,32 @@ class OrdersDetails extends StatelessWidget {
     Get.put(OrderDetailsController());
     return Scaffold(
       appBar: AppBar(title: Text("order details")),
-      body: Container(
-        child: GetBuilder<OrderDetailsController>(
-          builder:
-              (controller) => HandlingStatusRequest(
-                controller: controller,
-                statusRequest: controller.statusRequest,
-                widget: Container(
-                  padding: EdgeInsets.all(5),
-                  child: ListView(
-                    children: [
-                      OrderCheckout(),
-                      if (controller.orderModel.ordersDeliveryType == 0)
-                        OrderMap(),
-                      SizedBox(height: 20),
-                      AuthButton(
-                        onPress: () {
-                          Get.toNamed(
-                            AppRoutes.orderTracking,
-                            arguments: {"orderModel": controller.orderModel},
-                          );
-                        },
-                        title: "tracking",
-                      ),
-                    ],
-                  ),
+      body: GetBuilder<OrderDetailsController>(
+        builder:
+            (controller) => HandlingStatusRequest(
+              controller: controller,
+              statusRequest: controller.statusRequest,
+              widget: Container(
+                padding: EdgeInsets.all(5),
+                child: ListView(
+                  children: [
+                    OrderCheckout(),
+                    if (controller.orderModel.ordersDeliveryType == 0)
+                      OrderMap(),
+                    SizedBox(height: 20),
+                    AuthButton(
+                      onPress: () {
+                        Get.toNamed(
+                          AppRoutes.orderTracking,
+                          arguments: {"orderModel": controller.orderModel},
+                        );
+                      },
+                      title: "tracking",
+                    ),
+                  ],
                 ),
               ),
-        ),
+            ),
       ),
     );
   }

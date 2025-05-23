@@ -24,14 +24,18 @@ class OrderMap extends GetView<OrderDetailsController> {
               height: 200,
               width: double.infinity,
               child: FlutterMap(
+              
                 options: MapOptions(
+                  
                   initialCenter: controller.selectedLocation!,
                   initialZoom: 13,
                   minZoom: 6,
                   maxZoom: 25,
                 ),
                 children: [
+              
                   TileLayer(
+                  
                     urlTemplate:
                         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${ApiKeys.mapBoxToken}",
                     additionalOptions: {
