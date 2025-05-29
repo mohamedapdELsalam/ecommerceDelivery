@@ -12,19 +12,20 @@ class OnBoardingButton extends GetView<OnBoardingController> {
     var appHeight = Get.size.height;
     var appWidth = Get.size.width;
     return FittedBox(
-      child: Container(
+      child: SizedBox(
         height: appHeight * 0.05,
         width: appWidth * 0.2,
         child: MaterialButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            onPressed: onPress,
-            color: Theme.of(context).colorScheme.onPrimary,
-            child: GetBuilder<OnBoardingController>(
-              builder: (controller) =>
-                  FittedBox(child: Text(controller.ButtonText)),
-            )),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          onPressed: onPress,
+          color: Theme.of(context).colorScheme.onPrimary,
+          child: GetBuilder<OnBoardingController>(
+            builder:
+                (controller) => FittedBox(child: Text(controller.buttonText)),
+          ),
+        ),
       ),
     );
   }

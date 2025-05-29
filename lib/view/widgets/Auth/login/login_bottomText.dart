@@ -1,30 +1,32 @@
-import 'package:deliveryapp/controller/auth/forgetPassword_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgetPassBottomText extends StatelessWidget {
+import '../../../../controller/auth/login_controller.dart';
+
+class AuthBottomText extends StatelessWidget {
   final String firsText;
-  final String SecondText;
-  const ForgetPassBottomText({
-    required this.SecondText,
+  final String secondText;
+  final void Function()? onTap;
+  const AuthBottomText({
+    required this.secondText,
     required this.firsText,
+    required this.onTap,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordController controller = Get.put(ForgetPasswordController());
+    // LoginController controller =
+     Get.put(LoginController());
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(firsText),
         InkWell(
-          onTap: () {
-            controller.returnToLogin();
-          },
+          onTap: onTap,
           child: Text(
-            SecondText,
+            secondText,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).colorScheme.primary),

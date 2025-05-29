@@ -1,5 +1,5 @@
 import 'package:deliveryapp/controller/onBoarding_controller.dart';
-import 'package:deliveryapp/data/data_source/static/static.dart';
+import 'package:deliveryapp/data/data_source/static/onboarding_list.dart';
 import 'package:deliveryapp/view/widgets/onBoarding/onboarding_button.dart';
 import 'package:deliveryapp/view/widgets/onBoarding/onboarding_ctrl_slider.dart';
 import 'package:deliveryapp/view/widgets/onBoarding/onboarding_slider.dart';

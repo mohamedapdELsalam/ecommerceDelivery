@@ -30,7 +30,7 @@ class TextFormAuth extends StatelessWidget {
         decoration: InputDecoration(
             floatingLabelBehavior: FloatingLabelBehavior.always,
             labelText: "  $label   ",
-            labelStyle: Theme.of(context).textTheme.titleLarge,
+            labelStyle: Theme.of(context).textTheme.titleMedium,
             hintText: hint,
             hintStyle: Theme.of(context).textTheme.bodyMedium,
             contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),

@@ -10,7 +10,7 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 
 bool testMode = false;
-@pragma('vm:entry-point')            
+@pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   print("Handling a background message: ${message.messageId}");
   print("Handling a background message: ${message.notification!.title}");
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       translations: MyTranslation(),
       initialBinding: InitialBindings(),
-      locale: controller.language!,
+      locale: controller.language.value,
       getPages: myPages,
     );
   }

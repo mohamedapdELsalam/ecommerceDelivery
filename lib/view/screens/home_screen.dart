@@ -15,14 +15,7 @@ class HomeScreen extends StatelessWidget {
     HomeScreenController controller = Get.put(HomeScreenController());
     return PopScope(
       canPop: false,
-      onPopInvokedWithResult:
-          (didPop, result) => alertExit(
-            context,
-            "warn ",
-            " do you want to exit ?",
-            "exit",
-            "cancel",
-          ),
+      onPopInvokedWithResult: (didPop, result) => alertExit(context),
       child: Obx(
         () => Scaffold(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,

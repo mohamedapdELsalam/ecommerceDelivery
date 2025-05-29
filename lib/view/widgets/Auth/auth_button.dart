@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class AuthButton extends GetView<OnBoardingController> {
   final void Function()? onPress;
   final String? title;
-  const AuthButton({this.onPress, this.title});
+  const AuthButton({super.key, this.onPress, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,10 @@ class AuthButton extends GetView<OnBoardingController> {
             borderRadius: BorderRadius.circular(15),
           ),
           onPressed: onPress,
-          child: Text("$title")),
+          child: Text(
+            "$title",
+            style: context.textTheme.titleSmall,
+          )),
     );
   }
 }

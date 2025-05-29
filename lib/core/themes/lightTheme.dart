@@ -6,13 +6,12 @@ import 'package:get/get.dart';
 ThemeData lightTheme() {
   LocaleController controller = Get.put(LocaleController());
   return ThemeData(
-    scaffoldBackgroundColor: AppLightColors.backgroundColor,
     hoverColor: const Color.fromARGB(18, 9, 141, 228),
     shadowColor: AppLightColors.BackgroundbuttonColor,
     dialogBackgroundColor: AppLightColors.dialogBackgroundColor,
     fontFamily: controller.language == "ar" ? "cairo" : "lato",
     appBarTheme: AppBarTheme(
-      color: AppLightColors.appBarColor,
+      color: AppLightColors.BackgroundbuttonColor,
       centerTitle: true,
       titleTextStyle: TextStyle(
         fontSize: 22,

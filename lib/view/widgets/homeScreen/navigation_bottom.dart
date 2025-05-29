@@ -1,5 +1,5 @@
 import 'package:deliveryapp/controller/homescreen_controller.dart';
-import 'package:deliveryapp/data/data_source/static/static.dart';
+import 'package:deliveryapp/data/data_source/static/bottom_appbar_pages.dart';
 import 'package:deliveryapp/view/widgets/homeScreen/navigation_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

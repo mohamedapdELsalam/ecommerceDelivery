@@ -1,6 +1,7 @@
 import 'package:deliveryapp/core/class/status_request.dart';
 import 'package:deliveryapp/core/constants/app_routes.dart';
 import 'package:deliveryapp/core/functions/handling_status_request.dart';
+import 'package:deliveryapp/data/data_source/remote/auth/forget_password_data.dart';
 import 'package:deliveryapp/data/data_source/remote/auth/signup_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,18 +12,20 @@ abstract class SignUpControllerApstract extends GetxController {
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordCtrl = TextEditingController();
-  TextEditingController passConfirmCtrl = TextEditingController();
-  late StatusRequest statusRequest;
+  TextEditingController confirmPasswordCtrl = TextEditingController();
+  StatusRequest statusRequest = StatusRequest.none;
+  ForgetPasswordData forgetPasswordData = ForgetPasswordData();
+  bool isDisappearPassword = true;
 
   signUp();
+  switchShowPassword();
   goToLogin();
-  // clearTextEditingControllers();
 }
 
 class SignUpController extends SignUpControllerApstract {
-  bool isDisapearPassword = true;
+  @override
   switchShowPassword() {
-    isDisapearPassword = !isDisapearPassword;
+    isDisappearPassword = !isDisappearPassword;
     update();
   }
 
@@ -46,14 +49,19 @@ class SignUpController extends SignUpControllerApstract {
 
         if (statusRequest == StatusRequest.success) {
           if (response["status"] == "success") {
+            await forgetPasswordData.checkEmail(emailCtrl.text);
             print("Dialog should be shown now in success");
 
             Get.defaultDialog(
+              barrierDismissible: false,
               title: "your account created successfully",
               middleText: "go to verify your email",
               textConfirm: "ok",
               onConfirm: () {
-                Get.offNamed(AppRoutes.verifyEmail);
+                Get.toNamed(
+                  AppRoutes.verifyCodeSignup,
+                  arguments: {"email": emailCtrl.text},
+                );
               },
             );
             print("success");

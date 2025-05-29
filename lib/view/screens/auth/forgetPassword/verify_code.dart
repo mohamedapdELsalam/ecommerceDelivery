@@ -1,19 +1,19 @@
-
-import 'package:deliveryapp/controller/auth/verify_controller.dart';
-import 'package:deliveryapp/data/data_source/static/static.dart';
-import 'package:deliveryapp/testPackages.dart';
+import 'package:deliveryapp/controller/auth/forget_password/check_verifycode_controller.dart';
+import 'package:deliveryapp/core/class/handlind_status_request.dart';
+import 'package:deliveryapp/core/constants/lang_keys.dart';
 import 'package:deliveryapp/view/widgets/Auth/auth_button.dart';
 import 'package:deliveryapp/view/widgets/Auth/auth_title&subtitle.dart';
+import 'package:deliveryapp/view/widgets/Auth/forget_password/forget_otp.dart';
 import 'package:deliveryapp/view/widgets/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class VerifyCode extends StatelessWidget {
-  const VerifyCode({super.key});
+class CheckVerifyCode extends StatelessWidget {
+  const CheckVerifyCode({super.key});
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeController controller = Get.put(VerifyCodeController());
+    CheckVerifycodeController controller = Get.put(CheckVerifycodeController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -28,16 +28,21 @@ class VerifyCode extends StatelessWidget {
               SizedBox(width: double.infinity),
               LogoApp(bottomMargin: 0, hight: 100, width: 100),
               TitleAndSubtitleAuth(
-                title: verifyTitle,
-                subtitle: verifySubtitle,
+                title: LangKeys.verificationCode.tr,
+                subtitle: LangKeys.verificationSentence.tr,
                 veriable: "moalgouker@gmail.com",
                 bottomMargin: 50,
               ),
-              OptVerify(),
+              ForgetPasswordOtp(),
               Spacer(),
+              GetBuilder<CheckVerifycodeController>(
+                  builder: (controller) => HandlingStatusRequest(
+                      statusRequest: controller.statusRequest,
+                      widget: Container(),
+                      controller: controller)),
               AuthButton(
                   onPress: () {
-                    controller.verify();
+                    controller.checkVerifyCode();
                   },
                   title: "Continue"),
             ],

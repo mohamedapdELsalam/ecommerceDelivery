@@ -1,6 +1,7 @@
 import 'package:deliveryapp/core/constants/app_routes.dart';
 import 'package:deliveryapp/core/services/services.dart';
 import 'package:deliveryapp/main.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,7 +35,11 @@ class AuthMiddleWare extends GetMiddleware {
       return const RouteSettings(name: AppRoutes.test);
     }
     if (servicesController.sharedPref.getString("user_name") != null) {
-      return const RouteSettings(name: AppRoutes.homeScreen);
+      if (servicesController.sharedPref.getInt("approve") == 0) {
+        return const RouteSettings(name: AppRoutes.signupVerifyEmail);
+      } else {
+        return const RouteSettings(name: AppRoutes.homeScreen);
+      }
     }
     return null;
   }

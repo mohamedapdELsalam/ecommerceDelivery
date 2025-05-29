@@ -1,12 +1,9 @@
-import 'package:deliveryapp/controller/auth/login_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-
-class LoginBottomText extends StatelessWidget {
+class ForgetPassBottomText extends StatelessWidget {
   final String firsText;
   final String SecondText;
-  const LoginBottomText({
+  const ForgetPassBottomText({
     required this.SecondText,
     required this.firsText,
     super.key,
@@ -14,7 +11,7 @@ class LoginBottomText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LoginController controller = Get.put(LoginController());
+    // ForgetPasswordController controller = Get.put(ForgetPasswordController());
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -22,7 +19,7 @@ class LoginBottomText extends StatelessWidget {
         Text(firsText),
         InkWell(
           onTap: () {
-            controller.goToSignup();
+            // controller.returnToLogin();
           },
           child: Text(
             SecondText,

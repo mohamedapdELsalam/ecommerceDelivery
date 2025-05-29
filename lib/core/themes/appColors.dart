@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppLightColors {
-  static const Color primaryColor = Color.fromARGB(255, 1, 127, 138);
+  static const Color primaryColor = Color.fromARGB(255, 134, 19, 19);
   static const Color onPrimary = Color(0xFFFFFFFF);
   static const Color secondaryColor = Colors.white;
   static const Color onSecondary = Color(0xFF000000);
@@ -10,7 +10,7 @@ class AppLightColors {
   static const Color errorColor = Color(0xFFB00020);
   static const Color DoneColor = Colors.green;
   static const Color onError = Color(0xFFFFFFFF);
-  static const Color backgroundColor = Color.fromARGB(255, 230, 228, 228);
+  static const Color backgroundColor = Color(0xFFF5F5F5);
   static const Color buttonColor = Color.fromARGB(255, 17, 108, 120);
   static const Color BackgroundbuttonColor = Color.fromARGB(243, 236, 232, 232);
   static const Color appBarColor = Color.fromARGB(255, 17, 108, 120);
@@ -24,7 +24,7 @@ class AppLightColors {
 }
 
 class AppDarkColors {
-  static const Color primaryColor = Color.fromARGB(255, 1, 127, 138);
+  static const Color primaryColor = Color.fromARGB(184, 173, 24, 24);
   static const Color onPrimary = Color.fromARGB(255, 42, 41, 41);
   static const Color secondaryColor = Colors.white;
   static const Color onSecondary = Color(0xFFFFFFFF);
@@ -43,5 +43,5 @@ class AppDarkColors {
   static const Color titleColor = Color(0xFFE0E0E0);
   static const Color subTitleColor = Color(0xFFB0B0B0);
   static const Color dialogBackgroundColor = Color.fromARGB(195, 58, 88, 109);
-  static const Color titleAppbar = Color.fromARGB(223, 255, 255, 255);
+  static const Color titleAppbar = Color.fromARGB(223, 213, 13, 13);
 }

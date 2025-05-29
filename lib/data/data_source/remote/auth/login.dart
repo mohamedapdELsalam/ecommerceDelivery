@@ -1,6 +1,5 @@
 import 'package:deliveryapp/core/class/crud.dart';
 import 'package:deliveryapp/core/constants/api_links.dart';
-
 import 'package:get/get.dart';
 
 class LoginData {

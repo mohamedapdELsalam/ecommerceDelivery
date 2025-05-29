@@ -1,6 +1,5 @@
 import 'package:deliveryapp/controller/orders/orders_controller.dart';
 import 'package:deliveryapp/core/constants/image_assets.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,7 +17,9 @@ Widget ratingBarShow(BuildContext context, double initialRating, double size) {
     itemCount: 5,
     itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
     itemBuilder: (context, _) => Icon(Icons.star, color: Colors.amber),
-    onRatingUpdate: (rating) {},
+    onRatingUpdate: (rating) {
+      // controller.takeRating(rating);
+    },
   );
 }
 
@@ -64,7 +65,8 @@ void showDialogRating(BuildContext context, int orderId) {
                       }
                       return null;
                     },
-
+                    // maxLines: 2,
+                    // minLines: 1,
                     maxLength: 255,
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
@@ -75,7 +77,9 @@ void showDialogRating(BuildContext context, int orderId) {
                   ),
                   Spacer(flex: 2),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // controller.submitRating(orderId);
+                    },
                     child: Text(
                       "submit",
                       style: TextTheme.of(context).titleLarge!.copyWith(

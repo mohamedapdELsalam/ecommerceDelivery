@@ -1,6 +1,7 @@
+import 'package:deliveryapp/core/constants/lang_keys.dart';
 import 'package:deliveryapp/core/localizatoin/changeLocal.dart';
 import 'package:deliveryapp/core/services/services.dart';
-import 'package:deliveryapp/data/data_source/static/static.dart';
+import 'package:deliveryapp/data/data_source/static/onboarding_list.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +18,7 @@ class OnBoardingController extends OnBoardingControllerAbstract {
   int currentPage = 0;
   RxInt pageColor = 0.obs;
 
-  String ButtonText = onboardingButtonText;
+  String buttonText = LangKeys.continueButton.tr;
   @override
   next() {
     currentPage++;
@@ -26,14 +27,20 @@ class OnBoardingController extends OnBoardingControllerAbstract {
       servicesController.sharedPref.setInt("step", 1);
       Get.offAllNamed("login");
     } else {
-      pageController.animateToPage(currentPage,
-          duration: Duration(milliseconds: 400), curve: Curves.easeInOut);
+      pageController.animateToPage(
+        currentPage,
+        duration: Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
     }
   }
 
   gotoPage(int index) {
-    pageController.animateToPage(index,
-        duration: Duration(microseconds: 400), curve: Curves.easeInOut);
+    pageController.animateToPage(
+      index,
+      duration: Duration(microseconds: 400),
+      curve: Curves.easeInOut,
+    );
   }
 
   @override
@@ -47,11 +54,11 @@ class OnBoardingController extends OnBoardingControllerAbstract {
 
   changeButtonText() {
     if (currentPage == onBoardingList.length - 1) {
-      ButtonText = onboardingLastButtonText;
+      buttonText = LangKeys.enter.tr;
       update();
     } else if (currentPage < onBoardingList.length - 1) {
-      if (ButtonText != onboardingButtonText) {
-        ButtonText = onboardingButtonText;
+      if (buttonText.tr != LangKeys.continueButton.tr) {
+        buttonText = LangKeys.continueButton.tr;
         update();
       }
     }

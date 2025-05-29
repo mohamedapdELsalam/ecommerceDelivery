@@ -1,5 +1,5 @@
-
 import 'package:deliveryapp/core/constants/app_routes.dart';
+import 'package:deliveryapp/core/constants/lang_keys.dart';
 import 'package:deliveryapp/core/localizatoin/changeLocal.dart';
 import 'package:deliveryapp/view/widgets/language/language_button.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class LanguageScreen extends GetView<LocaleController> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("2".tr,
+            Text(LangKeys.chooseLanguage.tr,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
@@ -29,19 +29,25 @@ class LanguageScreen extends GetView<LocaleController> {
                   Get.toNamed(AppRoutes.onboarding);
                   controller.changeLocal("ar");
                 },
-                title: "3".tr),
+                title: LangKeys.arabic.tr),
             LanguageButton(
                 onPressed: () {
                   Get.toNamed(AppRoutes.onboarding);
                   controller.changeLocal("en");
                 },
-                title: "4".tr),
+                title: LangKeys.english.tr),
             LanguageButton(
                 onPressed: () {
                   Get.toNamed(AppRoutes.onboarding);
                   controller.changeLocal("de");
                 },
-                title: "5".tr),
+                title: LangKeys.germany.tr),
+            LanguageButton(
+                onPressed: () {
+                  Get.toNamed(AppRoutes.onboarding);
+                  controller.changeLocal("es");
+                },
+                title: LangKeys.spain.tr),
           ]),
     ));
   }
